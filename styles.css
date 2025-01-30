@@ -86,7 +86,7 @@ html.lenis {
 /* Container */
 .container {
   width: var(--container-width);
-  margin: 18rem auto;
+  margin: 0rem auto;
   padding: 0 2rem;
 }
 
@@ -182,6 +182,27 @@ button {
   border-radius: 8px;
   font-family: inherit;
   letter-spacing: -0.01em;
+  transition: scale 0.2s;
+  -webkit-transition: scale 0.2s;
+  -moz-transition: scale 0.2s;
+  -ms-transition: scale 0.2s;
+  -o-transition: scale 0.2s;
+}
+button:hover {
+  transition: scale 0.3s;
+  scale: 1.03;
+  -webkit-transition: scale 0.3s;
+  -moz-transition: scale 0.3s;
+  -ms-transition: scale 0.3s;
+  -o-transition: scale 0.3s;
+}
+button:active {
+  transition: scale 0.3s;
+  scale: 1.02;
+  -webkit-transition: scale 0.3s;
+  -moz-transition: scale 0.3s;
+  -ms-transition: scale 0.3s;
+  -o-transition: scale 0.3s;
 }
 .text__effect {
   color: blue;
