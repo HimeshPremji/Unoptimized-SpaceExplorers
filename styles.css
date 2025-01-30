@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-
+@font-face {
+  font-family: Matter;
+  src: url(fonts/matterregular.woff2);
+}
 /* Base Styles */
 *,
 *:before,
@@ -22,6 +25,8 @@ html {
 body {
   scroll-behavior: smooth;
   font-family: "Inter", sans-serif;
+  font-family: "Matter", sans-serif;
+
   font-size: var(--base-font-size);
   font-weight: 400;
   line-height: 1.5;
@@ -266,6 +271,7 @@ button {
   left: 0;
   position: absolute;
   width: 100%;
+  background: #000;
   display: grid;
   place-items: center;
 }
@@ -274,18 +280,22 @@ button {
   margin-top: 12rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  width: 100%;
   text-align: center;
 }
 
 .footer__links div {
   display: flex;
+  width: 100%;
   flex-direction: column;
-  gap: 2rem;
 }
 
 .footer__links a {
+  /* background: #000; */
+  width: 100%;
   color: white;
+  /* color: red; */
+
   text-decoration: none;
   font-size: clamp(1.8rem, 2.5vw, 2.4rem);
 }
@@ -300,9 +310,9 @@ button {
     max-width: none;
   }
 
-  .footer__links div {
+  /* .footer__links div {
     gap: 4rem;
-  }
+  } */
 }
 
 @media (min-width: 1024px) {

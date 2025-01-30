@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: ".text__effect",
         start: "top 60%",
         end: "top -30%",
-        markers: true,
+        // markers: false,
         scrub: 0.5,
       },
       scaleX: 0,
@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: isMobile ? 1.5 : 2,
         scrollTrigger: {
           trigger: ".mission",
-          // markers: true,
-          scrub: 1,
+          // markers: false,
+          scrub: .4,
           start: isMobile ? "top 80%" : "top center",
           end: isMobile ? "top 20%" : "top center",
         },
@@ -109,33 +109,58 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Footer animations
-    gsap.to(".footer", {
-      paddingBottom: isMobile
-        ? `calc(100vh - ${20 * vh}px)`
-        : "calc(140vh - 20%)",
-      minHeight: isMobile ? "40vh" : "50vh",
+    gsap.from(".footer", {
+      paddingBottom: 0,
+      duration: isMobile ? 2 : 3.5,
+    });
+    gsap.to(".footer__inner", {
+      duration: isMobile ? 2 : 3.5,
+      background: "pink",
+      // paddingBottom: isMobile
+      //   ? `calc(100vh - ${20 * vh}px)`
+      //   : "calc(140vh - 20%)",
+      // minHeight: isMobile ? "40vh" : "50vh",
       scrollTrigger: {
-        trigger: ".mission",
-        // markers: true,
-        start: isMobile ? "top 20%" : "top -20%",
-        end: isMobile ? "top 0%" : "top center",
+        trigger: ".footer",
+        markers: true, 
+        // start: isMobile ? "top 20%" : "top -20%",
+        start: isMobile ? "top 0%" : "top 50%",
+        end: isMobile ? "top center" : "top center",
         scrub: isMobile ? 1 : 1,
       },
       ease: "power4.inOut",
     });
 
-    gsap.from(".footer__inner a", {
-      x: isMobile ? 20 : 50,
-      opacity: 0,
-      stagger: isMobile ? 0.3 : 0.6,
+    gsap.to(".footer__inner a", {
+      duration: isMobile ? 2 : 3.5,
+      color: "red",
+      // paddingBottom: isMobile
+      //   ? `calc(100vh - ${20 * vh}px)`
+      //   : "calc(140vh - 20%)",
+      // minHeight: isMobile ? "40vh" : "50vh",
       scrollTrigger: {
         trigger: ".footer",
-        markers: false,
-        start: isMobile ? "top 70%" : "top 32%",
-        end: isMobile ? "top 24%" : "top 10%",
-        scrub: 1,
+        markers: true, 
+        // start: isMobile ? "top 20%" : "top -20%",
+        start: isMobile ? "top 0%" : "top 50%",
+        end: isMobile ? "top center" : "top center",
+        scrub: isMobile ? 1 : 1,
       },
+      ease: "power4.inOut",
     });
+
+    // gsap.from(".footer__inner a", {
+    //   x: isMobile ? 20 : 50,
+    //   opacity: 0,
+    //   stagger: isMobile ? 0.3 : 0.6,
+    //   scrollTrigger: {
+    //     trigger: ".footer",
+    //     markers: false,
+    //     start: isMobile ? "top 70%" : "top 32%",
+    //     end: isMobile ? "top 24%" : "top 10%",
+    //     scrub: 1,
+    //   },
+    // });
   }
 
   // Initialize animations
