@@ -14,7 +14,7 @@
 
 :root {
   --container-width: min(156.6rem, 90%);
-  --base-font-size: clamp(1.6rem, 1.5vw, 1.8rem);
+  --base-font-size: clamp(1.6rem, 1.7vw, 2rem);
 }
 
 html {
@@ -194,7 +194,8 @@ button {
   background-color: white;
   /*background: red;
   */
-  opacity: 0.7;
+  opacity: 0.4;
+  font-size: var(--base-font-size);
   transform-origin: center right;
 }
 /* Text Block */
@@ -235,6 +236,8 @@ button {
 }
 
 .fullwidth-image p {
+  text-align: center;
+  margin: 0 auto;
   font-size: clamp(1.6rem, 2.5vw, 2.4rem);
 }
 
@@ -249,14 +252,44 @@ button {
 .join-us__text {
   opacity: 0.5;
   font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  margin: 2rem 0;
 }
 
 /* Mission Underline */
-.mission svg {
-  width: 100%;
-  bottom: -0.5rem;
+
+
+.mission {
+  display: block;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.mission path {
+  transition: stroke-dashoffset 1s ease-out;
+  -webkit-transition: stroke-dashoffset 1s ease-out;
+  -moz-transition: stroke-dashoffset 1s ease-out;
+  -ms-transition: stroke-dashoffset 1s ease-out;
+  -o-transition: stroke-dashoffset 1s ease-out;
 }
 
+.mission svg {
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+}
+
+button {
+  border: none;
+  background-color: black;
+  padding: 1.6rem 4.8rem;
+  font-size: 2.4rem;
+  color: white;
+  border-radius: 8px;
+  font-family: inherit;
+  letter-spacing: -0.01em;
+}
 /* Footer */
 .footer {
   display: grid;

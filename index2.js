@@ -97,13 +97,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       gsap.to(missionPath, {
         strokeDashoffset: 0,
-        duration: isMobile ? 1.5 : 2,
         scrollTrigger: {
           trigger: ".mission",
-          // markers: false,
-          scrub: .4,
-          start: isMobile ? "top 80%" : "top center",
-          end: isMobile ? "top 20%" : "top center",
+          markers: true,
+          scrub: 0.2,
+          start: isMobile ? "top 80%" : "top 70%",
+          end: isMobile ? "top 20%" : "top 30%",
         },
       });
     }
@@ -113,40 +112,30 @@ document.addEventListener("DOMContentLoaded", () => {
       paddingBottom: 0,
       duration: isMobile ? 2 : 3.5,
     });
+    // First animation for background
     gsap.to(".footer__inner", {
-      duration: isMobile ? 2 : 3.5,
       background: "pink",
-      // paddingBottom: isMobile
-      //   ? `calc(100vh - ${20 * vh}px)`
-      //   : "calc(140vh - 20%)",
-      // minHeight: isMobile ? "40vh" : "50vh",
       scrollTrigger: {
         trigger: ".footer",
-        markers: true, 
-        // start: isMobile ? "top 20%" : "top -20%",
-        start: isMobile ? "top 0%" : "top 50%",
+        start: isMobile ? "top 0%" : "top 16%",
         end: isMobile ? "top center" : "top center",
-        scrub: isMobile ? 1 : 1,
-      },
-      ease: "power4.inOut",
+        scrub: isMobile ? 1 : 0.4, // Use numeric scrub values for consistency
+        markers: false, // Keep markers for debugging
+        ease: "power4.inOut"
+      }
     });
-
+    
+    // Second animation for links with synchronized timing
     gsap.to(".footer__inner a", {
-      duration: isMobile ? 2 : 3.5,
       color: "red",
-      // paddingBottom: isMobile
-      //   ? `calc(100vh - ${20 * vh}px)`
-      //   : "calc(140vh - 20%)",
-      // minHeight: isMobile ? "40vh" : "50vh",
+      stagger: isMobile ? 0.2 : 0.1, // Reduced stagger for smoothness
       scrollTrigger: {
         trigger: ".footer",
-        markers: true, 
-        // start: isMobile ? "top 20%" : "top -20%",
-        start: isMobile ? "top 0%" : "top 50%",
+        start: isMobile ? "top 0%" : "top 16%",
         end: isMobile ? "top center" : "top center",
-        scrub: isMobile ? 1 : 1,
-      },
-      ease: "power4.inOut",
+        scrub: isMobile ? 1 : 0.4, // Match exact scrub value
+        ease: "power4.inOut"
+      }
     });
 
     // gsap.from(".footer__inner a", {
