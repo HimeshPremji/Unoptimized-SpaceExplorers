@@ -172,7 +172,7 @@ p {
     inset: 0;
     z-index: 2;
     background-color: black;
-    opacity: 0;
+    opacity: 1;
 }
 
 .fullwidth-image__text {
@@ -223,6 +223,13 @@ p {
     display: inline-block;
     position: relative;
 }
+.mission path {
+    transition: stroke-dashoffset 1s ease-out;
+    -webkit-transition: stroke-dashoffset 1s ease-out;
+    -moz-transition: stroke-dashoffset 1s ease-out;
+    -ms-transition: stroke-dashoffset 1s ease-out;
+    -o-transition: stroke-dashoffset 1s ease-out;
+}
 
 .mission svg {
     position: absolute;
@@ -253,6 +260,77 @@ button {
     top: 0;
     left: 0;
     background-color: white;
-    opacity: 0.7;
+    /*background: red;
+    */opacity: .7;
     transform-origin: center right;
+}
+
+.footer {
+    display: grid;
+    place-items: center;
+    background: #030303;
+    position: relative;
+    padding-bottom: 0;
+}
+
+.footer__inner {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: space-between;
+}
+.footer__links {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.4rem;
+    text-align: center;
+}
+.footer__links div{
+    display: flex;
+    flex-direction: column;
+    scale: 0.7;
+    justify-content: space-between;
+    gap: 8rem;
+    margin: 2.4rem;
+}
+.footer__links div,
+.footer__links a,
+.footer__links h2 {
+    width: fit-content;
+}
+.footer__links a {
+    color: white;
+    text-decoration: none;
+}
+.footer__links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Add a media query for mobile */
+@media (max-width: 768px) {
+    html {
+        font-size: calc(100vw / 393 * 10);
+    }
+
+    h1,
+    h2 {
+        font-size: 8rem;
+    }
+
+    p {
+        font-size: 2.4rem;
+    }
+
+    .hero {
+        height: 80vh;
+    }
+
+    .hero__images img {
+        max-width: 40%;
+    }
 }
