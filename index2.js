@@ -34,33 +34,23 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: "expo.out",
     });
 
-    // Text block animations
-    gsap.matchMedia().add("(min-width: 768px)", () => {
-      gsap.to(".text__overlay", {
+    const splitTypes = document.querySelectorAll(".text__effect p");
+    splitTypes.forEach((char, idx) => {
+      const text = new SplitType(char, { types: "chars" });
+
+      gsap.from(text.chars, {
+        duration: 1,
+        ease: "power4.out",
+        opacity: 0.2,
+        stagger: 0.1,
         scrollTrigger: {
-          trigger: ".text__effect",
-          start: "top 60%",
-          end: "top -30%",
+          trigger: char,
+          start: "top 70%",
+          end: "top 40%",
+          markers: false,
           scrub: 0.5,
         },
-        scaleX: 0,
-        duration: 4,
-        ease: "power4.out",
       });
-    });
-
-    gsap.to(".text__overlay", {
-      scrollTrigger: {
-        trigger: ".text__effect",
-        start: "top 60%",
-        end: "top -30%",
-        // markers: false,
-        scrub: 0.5,
-      },
-      scaleX: 0,
-      duration: 4,
-      ease: "power4.out",
-      stagger: 0.2,
     });
 
     // Fullwidth image animations
@@ -99,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         strokeDashoffset: 0,
         scrollTrigger: {
           trigger: ".mission",
-          markers: true,
+          markers: false,
           scrub: 0.2,
           start: isMobile ? "top 80%" : "top 70%",
           end: isMobile ? "top 20%" : "top 30%",
@@ -121,10 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
         end: isMobile ? "top center" : "top center",
         scrub: isMobile ? 1 : 0.4, // Use numeric scrub values for consistency
         markers: false, // Keep markers for debugging
-        ease: "power4.inOut"
-      }
+        ease: "power4.inOut",
+      },
     });
-    
+
     // Second animation for links with synchronized timing
     gsap.to(".footer__inner a", {
       color: "red",
@@ -134,8 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
         start: isMobile ? "top 0%" : "top 16%",
         end: isMobile ? "top center" : "top center",
         scrub: isMobile ? 1 : 0.4, // Match exact scrub value
-        ease: "power4.inOut"
-      }
+        ease: "power4.inOut",
+      },
     });
 
     // gsap.from(".footer__inner a", {
