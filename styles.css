@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: Matter;
-  src: url(fonts/matterregular.woff2);
+  src: url(./assets/font/matterregular.woff2);
 }
 /* Base Styles */
 *,
@@ -116,7 +116,6 @@ html.lenis {
 
 .hero__title {
   text-align: center;
-  max-width: 10ch;
   z-index: 2;
   mix-blend-mode: difference;
   color: white;
@@ -134,57 +133,6 @@ html.lenis {
   position: absolute;
   max-width: 90%;
   height: auto;
-}
-
-/* Hero Image Positions - Mobile First */
-.hero img:nth-child(1) {
-  /* Top Left */
-  width: min(37.4rem, 80%);
-  top: 5%;
-  left: 5%;
-}
-
-.hero img:nth-child(2) {
-  /* Top Center */
-  width: min(24.1rem, 40%);
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.hero img:nth-child(3) {
-  /* Top Right */
-  width: min(35.1rem, 60%);
-  top: 5%;
-  right: 5%;
-}
-
-.hero img:nth-child(4) {
-  /* Middle Right */
-  width: min(37.4rem, 70%);
-  top: 40%;
-  right: 5%;
-}
-
-.hero img:nth-child(5) {
-  /* Middle Left */
-  width: min(35.1rem, 65%);
-  top: 40%;
-  left: 5%;
-}
-
-.hero img:nth-child(6) {
-  /* Bottom Left */
-  width: min(24.1rem, 50%);
-  bottom: 5%;
-  left: 5%;
-}
-
-.hero img:nth-child(7) {
-  /* Bottom Right */
-  width: min(63.9rem, 90%);
-  bottom: 5%;
-  right: 5%;
 }
 
 button {
@@ -386,30 +334,36 @@ button {
 }
 
 /* Media Queries */
-@media (min-width: 768px) {
-  .hero__title div {
-    gap: 2rem;
+@media (max-width: 768px) {
+  .hero__title {
+    min-width: 10ch;
   }
 
-  .hero img {
-    max-width: none;
-  }
-}
+  @media (min-width: 768px) {
+    .hero__title div {
+      gap: 2rem;
+    }
 
-@media (min-width: 1024px) {
-  .hero__title div {
-    flex-wrap: nowrap;
-    gap: 4rem;
-  }
-
-  .fullwidth-image {
-    clip-path: polygon(5% 10%, 95% 10%, 95% 90%, 5% 90%);
+    .hero img {
+      max-width: none;
+    }
   }
 
-  .footer__links {
-    flex-direction: row;
-    justify-content: center;
-    gap: 8rem;
+  @media (min-width: 1024px) {
+    .hero__title div {
+      flex-wrap: nowrap;
+      gap: 4rem;
+    }
+
+    .fullwidth-image {
+      clip-path: polygon(5% 10%, 95% 10%, 95% 90%, 5% 90%);
+    }
+
+    .footer__links {
+      flex-direction: row;
+      justify-content: center;
+      gap: 8rem;
+    }
   }
 }
 
