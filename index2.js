@@ -12,6 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   requestAnimationFrame(raf);
 
+    // Scroll to top button logic
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+    // Show the button when the user scrolls down 20px from the top
+    window.onscroll = function() {
+      if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    };
+  
+    // Scroll to the top of the document when the button is clicked
+    scrollToTopBtn.addEventListener("click", () => {
+      lenis.scrollTo("top", { duration: 1 }); // Smooth scroll to the top using Lenis
+    });
+
   // Responsive animation handler
   function handleResponsiveAnimations() {
     const isMobile = window.innerWidth < 768;
@@ -89,8 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
         strokeDashoffset: 0,
         scrollTrigger: {
           trigger: ".mission",
-          markers: false,
-          scrub: 0.2,
+          markers: true,
+          scrub: 0.6,
           start: isMobile ? "top 80%" : "top 70%",
           end: isMobile ? "top 20%" : "top 30%",
         },

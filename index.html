@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
+    />
     <title>Space Explorers</title>
     <link rel="stylesheet" href="./styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -11,6 +14,25 @@
     <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
   </head>
   <body>
+    <div id="svgTop">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <filter id="noiseFilter">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.4"
+            numOctaves="10"
+            stitchTiles="stitch"
+          />
+        </filter>
+        <rect
+          width="100%"
+          height="100%"
+          filter="url(#noiseFilter)"
+          opacity="0.6"
+        />
+      </svg>
+    </div>
+
     <section id="home" class="hero">
       <h1 class="hero__title">
         <div>
@@ -33,28 +55,35 @@
         </div>
       </h1>
       <div class="hero__images">
-        <img src="./images/Photo1.jpg" alt="Galaxy" />
-        <img src="./images/Photo2.jpg" alt="Astronaut" />
-        <img src="./images/Photo3.jpg" alt="Rocket Launch" />
-        <img src="./images/Photo4.jpg" alt="Planets" />
-        <img src="./images/Photo5.jpg" alt="Milky Way" />
-        <img src="./images/Photo6.jpg" alt="Satellite" />
-        <img src="./images/Photo7.jpg" alt="Nebula" />
+        <img src="./MoonNasa/Photo18.jpg" alt="Astronaut" />
+        <img src="./MoonNasa/Photo1.jpg" alt="Rocket Launch" />
+        <img src="./MoonNasa/Photo12.jpg" alt="Nebula" />
+        <img src="./MoonNasa/Photo2.jpg" alt="Planets" />
+        <img src="./MoonNasa/Photo3.jpg" alt="Milky Way" />
+        <img src="./MoonNasa/Photo4.jpg" alt="Satellite" />
+        <img src="./MoonNasa/Photo12.jpg" alt="Nebula" />
       </div>
     </section>
     <section id="about" class="text-block">
       <div class="container">
         <div class="text__effect">
           <div class="text__overlay"></div>
-          <p>Space Explorers is dedicated to inspiring curiosity about the universe.</p>
+          <p>
+            Space Explorers is dedicated to inspiring curiosity about the
+            universe.
+          </p>
         </div>
         <div class="text__effect">
           <div class="text__overlay"></div>
-          <p>We believe that exploring the cosmos is not just for astronauts,</p>
+          <p>
+            We believe that exploring the cosmos is not just for astronauts,
+          </p>
         </div>
         <div class="text__effect">
           <div class="text__overlay"></div>
-          <p>but for everyone. Join us as we uncover the mysteries of the stars,</p>
+          <p>
+            but for everyone. Join us as we uncover the mysteries of the stars,
+          </p>
         </div>
         <div class="text__effect">
           <div class="text__overlay"></div>
@@ -71,12 +100,13 @@
       <div class="fullwidth-image__text">
         <h2>2023 Space Collection</h2>
         <p>
-          Discover our latest collection of space-inspired gear. From telescopes to astronaut suits, 
-          we’ve got everything you need to embark on your cosmic journey. 
-          Designed for durability and comfort, so you can focus on the stars.
+          Discover our latest collection of space-inspired gear. From telescopes
+          to astronaut suits, we’ve got everything you need to embark on your
+          cosmic journey. Designed for durability and comfort, so you can focus
+          on the stars.
         </p>
       </div>
-      <img src="./images/fullwidth.jpg" alt="Space Collection" />
+      <img src="./MoonNasa/Photo10.jpg" alt="Space Collection" />
     </section>
     <section id="mission" class="join-us">
       <div class="join-us__inner">
@@ -98,8 +128,8 @@
           </span>
         </h2>
         <p class="join-us__text">
-          The moon landing was one of humanity's greatest achievements. 
-          Let’s continue to push the boundaries of exploration.
+          The moon landing was one of humanity's greatest achievements. Let’s
+          continue to push the boundaries of exploration.
         </p>
         <button>Join the Mission</button>
       </div>
@@ -120,6 +150,7 @@
         </div>
       </div>
     </section>
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
     <script src="index2.js"></script>
   </body>
 </html>
